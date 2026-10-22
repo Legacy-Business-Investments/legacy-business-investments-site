@@ -74,7 +74,7 @@
   <p style="margin:0 0 1.5rem;font-size:.9rem"><a href="../../">&larr; Legacy Digital Labs</a> &middot; <a href="../">Sanctuary</a></p>
   <header>
     <h1>Privacy Policy — Sanctuary</h1>
-    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 8 October 2026</p>
+    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 21 October 2026</p>
     <p class="lede">Sanctuary is a private, on-device journaling app for Android. This policy explains what Sanctuary does and does not do with your information.</p>
     <div class="promise">The short version: <strong>your journal stays on your phone.</strong> Sanctuary has no servers, no account, and no ability to send your entries anywhere.</div>
   </header>
@@ -99,7 +99,7 @@
   <p>Everything you put into Sanctuary is stored <strong>locally in the app&rsquo;s private storage</strong> on your device:</p>
   <ul>
     <li><strong>Journal entries</strong> (text, moods, tags, dates) are stored in a local database that is <strong>encrypted at rest</strong> using SQLCipher. The database key is held in Android&rsquo;s hardware-backed Keystore via encrypted preferences.</li>
-    <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage and are not shared with other apps.</li>
+    <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage, <strong>encrypted at rest</strong> (AES-256-GCM), and are not shared with other apps. The photo key is separate from the database key and is also held in Android&rsquo;s hardware-backed Keystore via encrypted preferences.</li>
     <li><strong>Settings</strong> (theme, font, app-lock configuration, and similar preferences) are stored locally.</li>
   </ul>
   <p>When you delete an entry, it moves to Recently deleted, where it stays on your device for 30 days so you can restore it, and is then removed along with its photos. You can also remove it straight away from Recently deleted. All of this data is removed when you uninstall the app. Sanctuary sets <code>allowBackup=&quot;false&quot;</code> and excludes all of its data from Android&rsquo;s backup rules, so your journal is not included in Android&rsquo;s automatic cloud backup and is not copied when you transfer to a new phone. To move your journal to a new phone, export a backup in the app and import it on the new phone (see &sect;8).</p>
@@ -141,8 +141,9 @@
 
   <hr>
 
-  <h2>6. Purchases</h2>
+  <h2>6. Purchases and ratings</h2>
   <p>Sanctuary offers a single optional <strong>one-time &ldquo;Lifetime Pro&rdquo;</strong> in-app purchase. Payments are processed entirely by <strong>Google Play Billing</strong> — Sanctuary never sees or handles your payment details. Your purchase (an entitlement attached to your Google account) is what lets Sanctuary restore Pro across your devices and reinstalls. Google&rsquo;s handling of the transaction is governed by <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>. Sanctuary stores only a local flag recording that Pro is unlocked.</p>
+  <p>Once, after you have written a few entries on different days, Sanctuary may ask Google Play to show its own rating sheet. It is asked only once, never while you are writing, and you can simply close it. Google Play draws the sheet and handles any rating or review you choose to leave, under <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>; Sanctuary never sees your rating or review, and nothing you have written is part of it.</p>
 
   <hr>
 
@@ -155,7 +156,7 @@
   <p>Because your data never leaves your device, you remain in full control:</p>
   <ul>
     <li>Delete individual entries at any time within the app. A deleted entry waits in Recently deleted for 30 days in case you change your mind, and you can remove it sooner from there.</li>
-    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone.</li>
+    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone. A backup includes your entries and their photos. A plain backup is not encrypted, so anyone who has the file can read your entries and see your photos; keep it somewhere you trust. A password-protected backup is encrypted as a whole, entries and photos alike, with the password you choose.</li>
     <li>Uninstalling the app removes its local data from your device.</li>
   </ul>
 
@@ -168,6 +169,7 @@
 
   <h2>10. Contact</h2>
   <p>Questions about privacy in Sanctuary: <strong><a href="mailto:legacybusiness25@gmail.com">legacybusiness25@gmail.com</a></strong>.</p>
+  <p>You can also use <strong>Send feedback</strong> in the app&rsquo;s Settings. It opens your own email app with our address, a subject, and your app and Android versions filled in; it never adds your entries or any identifier of your device. Nothing is sent unless you send it yourself, from your email app. If you do, we receive your message and email address like any email, and use them only to reply to you.</p>
 
   <footer>
     Sanctuary — a private, on-device journaling app for Android.
