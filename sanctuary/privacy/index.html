@@ -74,7 +74,7 @@
   <p style="margin:0 0 1.5rem;font-size:.9rem"><a href="../../">&larr; Legacy Digital Labs</a> &middot; <a href="../">Sanctuary</a></p>
   <header>
     <h1>Privacy Policy — Sanctuary</h1>
-    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 21 October 2026</p>
+    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 27 October 2026</p>
     <p class="lede">Sanctuary is a private, on-device journaling app for Android. This policy explains what Sanctuary does and does not do with your information.</p>
     <div class="promise">The short version: <strong>your journal stays on your phone.</strong> Sanctuary has no servers, no account, and no ability to send your entries anywhere.</div>
   </header>
@@ -98,9 +98,9 @@
   <h2>3. What you create stays on your device</h2>
   <p>Everything you put into Sanctuary is stored <strong>locally in the app&rsquo;s private storage</strong> on your device:</p>
   <ul>
-    <li><strong>Journal entries</strong> (text, moods, tags, dates) are stored in a local database that is <strong>encrypted at rest</strong> using SQLCipher. The database key is held in Android&rsquo;s hardware-backed Keystore via encrypted preferences.</li>
-    <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage, <strong>encrypted at rest</strong> (AES-256-GCM), and are not shared with other apps. The photo key is separate from the database key and is also held in Android&rsquo;s hardware-backed Keystore via encrypted preferences.</li>
-    <li><strong>Settings</strong> (theme, font, app-lock configuration, and similar preferences) are stored locally.</li>
+    <li><strong>Journal entries</strong> (text, moods, tags, dates) are stored in a local database that is <strong>encrypted at rest</strong> using SQLCipher. The database key is kept in an encrypted settings file whose own key is held in Android&rsquo;s hardware-backed Keystore.</li>
+    <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage, <strong>encrypted at rest</strong> (AES-256-GCM), and are not shared with other apps. The photo key is separate from the database key and is kept the same way.</li>
+    <li><strong>Settings</strong> (theme, font, app-lock configuration, and similar preferences) are stored locally, in the same encrypted settings file. If <strong>Recent searches</strong> is on, your last 5 searches are kept there too; they are never part of a backup, and turning Recent searches off deletes them.</li>
   </ul>
   <p>When you delete an entry, it moves to Recently deleted, where it stays on your device for 30 days so you can restore it, and is then removed along with its photos. You can also remove it straight away from Recently deleted. All of this data is removed when you uninstall the app. Sanctuary sets <code>allowBackup=&quot;false&quot;</code> and excludes all of its data from Android&rsquo;s backup rules, so your journal is not included in Android&rsquo;s automatic cloud backup and is not copied when you transfer to a new phone. To move your journal to a new phone, export a backup in the app and import it on the new phone (see &sect;8).</p>
 
@@ -117,11 +117,11 @@
         </tr>
         <tr>
           <td><strong>Biometric</strong> (<code>USE_BIOMETRIC</code>)</td>
-          <td>Optional app lock. If you enable it, your device&rsquo;s biometric/screen-lock is used to unlock the app. Sanctuary never sees or stores your fingerprint, face, or PIN — that is handled entirely by Android. While app lock is on, Sanctuary also blocks screenshots and screen recordings of the app and hides its preview in the recent-apps screen, so your entries can&rsquo;t be seen there without unlocking.</td>
+          <td>Optional app lock. If you enable it, your device&rsquo;s biometric/screen-lock is used to unlock the app. Sanctuary never sees or stores your fingerprint, face, or PIN — that is handled entirely by Android. While app lock is on, Sanctuary also blocks screenshots and screen recordings of the app and hides its preview in the recent-apps screen, so your entries can&rsquo;t be seen there without unlocking. The write button on Sanctuary&rsquo;s home-screen widgets opens a small sheet without unlocking; it can only add a new entry and never shows anything already written.</td>
         </tr>
         <tr>
           <td><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>)</td>
-          <td>Optional daily reminder to write. It is <strong>off unless you turn it on</strong>, and Sanctuary asks for this permission only when you do. The reminder is a notification created on your device at the time you choose; it is not sent from a server, and it <strong>never shows anything you have written</strong>.</td>
+          <td>Optional daily reminder to write. It is <strong>off unless you turn it on</strong>, and Sanctuary asks for this permission only when you do. The reminder is a notification created on your device at the time you choose; it is not sent from a server, and it <strong>never shows anything you have written</strong>. If you seal a letter to your future self, Sanctuary also shows one notification on the day it opens (&ldquo;A letter from you is ready to open&rdquo;), which never shows what the letter says.</td>
         </tr>
         <tr>
           <td><strong>Billing</strong> (<code>com.android.vending.BILLING</code>)</td>
@@ -135,9 +135,10 @@
   <hr>
 
   <h2>5. On-device AI features</h2>
-  <p>Some optional features (for example cleaning up text, summaries, and reflection prompts) use <strong>on-device artificial-intelligence models</strong>, such as Google&rsquo;s Gemini Nano via Android&rsquo;s ML Kit GenAI, running locally on supported devices. When you use these features, your text is processed <strong>on your device</strong> and is not sent to us or to any server by the app.</p>
+  <p>Some optional features (for example cleaning up text, summaries, reflection prompts, changing the tone of a passage, photo descriptions, and Concept Search) use <strong>on-device artificial-intelligence models</strong>, such as Google&rsquo;s Gemini Nano via Android&rsquo;s ML Kit GenAI, running locally on supported devices. When you use these features, your text is processed <strong>on your device</strong> and is not sent to us or to any server by the app.</p>
   <p><strong>An honest note about the AI model itself:</strong> the on-device model is part of the Android system and is provisioned and updated by your device&rsquo;s operating system (Google Play services / AICore), not by Sanctuary. That system-level provisioning is outside the app&rsquo;s control and is governed by Google&rsquo;s own terms and privacy policy. Sanctuary itself never transmits your journal content — the &ldquo;stays on your phone&rdquo; promise above applies to everything you write and store in the app.</p>
   <p>On devices that do not support on-device AI, these features either fall back to a simple local alternative or are unavailable, with a clear message. No feature sends your content off-device.</p>
+  <p><strong>One switch turns them all off.</strong> In Settings &rsaquo; On-device features you can turn these features off. While they are off, no on-device model reads your entries or photos, and Concept Search stops indexing. Captions and summaries already made are kept. Voice dictation isn&rsquo;t affected (it uses Android&rsquo;s own speech recognizer; see &sect;4).</p>
 
   <hr>
 
@@ -156,7 +157,7 @@
   <p>Because your data never leaves your device, you remain in full control:</p>
   <ul>
     <li>Delete individual entries at any time within the app. A deleted entry waits in Recently deleted for 30 days in case you change your mind, and you can remove it sooner from there.</li>
-    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone. A backup includes your entries and their photos. A plain backup is not encrypted, so anyone who has the file can read your entries and see your photos; keep it somewhere you trust. A password-protected backup is encrypted as a whole, entries and photos alike, with the password you choose.</li>
+    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone. A backup includes your entries and their photos. A plain backup is not encrypted, so anyone who has the file can read your entries and see your photos; keep it somewhere you trust. A password-protected backup is encrypted as a whole, entries and photos alike, with the password you choose. A letter you seal to your future self stays sealed inside Sanctuary until its day, but a backup carries its text like any other entry.</li>
     <li>Uninstalling the app removes its local data from your device.</li>
   </ul>
 
