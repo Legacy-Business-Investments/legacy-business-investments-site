@@ -75,7 +75,7 @@ p { margin: .75rem 0; }
 .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
 
 .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
-@media (min-width: 760px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 760px) { .shots { grid-template-columns: repeat(3, 1fr); } }
 .shots img { border-radius: 12px; border: 1px solid var(--border); }
 
 ul.features { padding-left: 1.2rem; }

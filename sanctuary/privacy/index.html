@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Sanctuary</title>
+<title>Privacy Policy — Sanctuary: Private Journal</title>
 <meta name="description" content="Privacy policy for Sanctuary, a private, on-device Android journaling app. Your journal stays on your phone: no accounts, no servers, no data collection.">
 <style>
   :root {
@@ -73,8 +73,8 @@
 <div class="wrap">
   <p style="margin:0 0 1.5rem;font-size:.9rem"><a href="../../">&larr; Legacy Digital Labs</a> &middot; <a href="../">Sanctuary</a></p>
   <header>
-    <h1>Privacy Policy — Sanctuary</h1>
-    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 5 November 2026</p>
+    <h1>Privacy Policy — Sanctuary: Private Journal</h1>
+    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 18 November 2026</p>
     <p class="lede">Sanctuary is a private, on-device journaling app for Android. This policy explains what Sanctuary does and does not do with your information.</p>
     <div class="promise">The short version: <strong>your journal stays on your phone.</strong> Sanctuary has no servers, no account, and no ability to send your entries anywhere.</div>
   </header>
@@ -98,7 +98,7 @@
   <h2>3. What you create stays on your device</h2>
   <p>Everything you put into Sanctuary is stored <strong>locally in the app&rsquo;s private storage</strong> on your device:</p>
   <ul>
-    <li><strong>Journal entries</strong> (text, moods, tags, dates) are stored in a local database that is <strong>encrypted at rest</strong> using SQLCipher. The database key is kept in an encrypted settings file whose own key is held in Android&rsquo;s hardware-backed Keystore.</li>
+    <li><strong>Journal entries</strong> (text, moods, tags, dates, and any doodle you draw) are stored in a local database that is <strong>encrypted at rest</strong> using SQLCipher. The database key is kept in an encrypted settings file whose own key is held in Android&rsquo;s hardware-backed Keystore.</li>
     <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage, <strong>encrypted at rest</strong> (AES-256-GCM), and are not shared with other apps. The photo key is separate from the database key and is kept the same way.</li>
     <li><strong>Settings</strong> (theme, font, app-lock configuration, and similar preferences) are stored locally, in the same encrypted settings file. If <strong>Recent searches</strong> is on, your last 5 searches are kept there too; they are never part of a backup, and turning Recent searches off deletes them. If you turn on Automatic backup, its password and the folder you chose are kept there too (see &sect;8).</li>
     <li><strong>Crash log.</strong> If Sanctuary stops unexpectedly, it writes a short report to a file in its private storage. This one file is not encrypted, because it has to work even when the database doesn&rsquo;t, so it holds only technical details: the time of the crash, where in Sanctuary&rsquo;s code it happened (class and method names and line numbers), the type of error, your app and Android versions, and your phone&rsquo;s maker and model. It holds none of your entries or photos, and it leaves out error messages, because a message can quote the data that caused it. It stays on your phone unless you choose to send it (see &sect;10).</li>
@@ -160,7 +160,7 @@
   <p>Sanctuary never sends your data off your device, so you remain in full control:</p>
   <ul>
     <li>Delete individual entries at any time within the app. A deleted entry waits in Recently deleted for 30 days in case you change your mind, and you can remove it sooner from there.</li>
-    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone. A backup includes your entries and their photos. A plain backup is not encrypted, so anyone who has the file can read your entries and see your photos; keep it somewhere you trust. A password-protected backup is encrypted as a whole, entries and photos alike, with the password you choose. A letter you seal to your future self stays sealed inside Sanctuary until its day, but a backup carries its text like any other entry.</li>
+    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone. A backup includes your entries, their doodles, and their photos. A plain backup is not encrypted, so anyone who has the file can read your entries and see your photos; keep it somewhere you trust. A password-protected backup is encrypted as a whole, entries and photos alike, with the password you choose. A letter you seal to your future self stays sealed inside Sanctuary until its day, but a backup carries its text like any other entry.</li>
     <li><strong>Automatic backup</strong> (a Pro feature, off unless you turn it on) makes a password-protected backup when you turn it on and about once a week after that, in a folder you choose. It keeps the latest three and removes only its own older automatic backups; nothing else in that folder is touched. Sanctuary reaches that folder through Android&rsquo;s folder picker, not a storage permission, and you can turn the backup off at any time.
       <ul>
         <li><strong>Your password.</strong> These backups run while you&rsquo;re away, so Sanctuary keeps the password you choose in its encrypted settings file (see &sect;3). It is never shown again, is not part of any backup, and is never sent anywhere. You&rsquo;ll need it to restore a backup on a new phone. If you lose it, no one can open those backups, including us.</li>
