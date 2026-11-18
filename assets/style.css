@@ -73,6 +73,10 @@ p { margin: .75rem 0; }
 .button:hover { filter: brightness(1.05); }
 .button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.follow { display: flex; align-items: center; gap: .25rem; margin-top: 1rem; color: var(--ink-soft); font-size: .95rem; }
+.follow span { margin-right: .5rem; }
+.social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; color: var(--accent); }
+.social:hover { background: var(--accent-soft); }
 
 .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
 @media (min-width: 760px) { .shots { grid-template-columns: repeat(3, 1fr); } }
