@@ -66,7 +66,13 @@
   th, td { text-align: left; vertical-align: top; padding: .75rem .9rem; border: 1px solid var(--border); }
   th { background: var(--accent-soft); font-weight: 600; }
   hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--ink-soft); font-size: .9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--ink-soft); font-size: .9rem; display: grid; gap: .5rem; }
+  footer a { color: var(--ink-soft); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+  .follow { display: flex; align-items: center; gap: .25rem; margin-top: .25rem; }
+  .follow span { margin-right: .5rem; }
+  .social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; }
+  .social:hover { background: var(--accent-soft); }
 </style>
 </head>
 <body>
@@ -187,7 +193,26 @@
   <p>Sanctuary also has a <a href="https://www.facebook.com/sanctuaryprivatejournal">Facebook Page</a> and an <a href="https://www.instagram.com/sanctuaryprivatejournal/">Instagram account</a>, linked from our website. The app has no connection to them and shares nothing with them. If you follow, comment on or message these accounts, that happens on Facebook or Instagram under Meta&rsquo;s own privacy policy, and we see only what those services show any account owner, such as your public profile name and what you write to us. Our website has no analytics or trackers, so following a link to these accounts tells us nothing about you.</p>
 
   <footer>
-    Sanctuary — a private, on-device journaling app for Android.
+    <div>Sanctuary — a private, on-device journaling app for Android.</div>
+    <div>Legacy Digital Labs is a brand of <strong>Legacy Business Investments LLC</strong>, a Minnesota limited liability company.</div>
+    <div>2897 N. Druid Hills Rd., STE 155-76026, Atlanta, GA 30329, USA · <a href="mailto:legacybusiness25@gmail.com">legacybusiness25@gmail.com</a></div>
+    <div>© 2026 Legacy Business Investments LLC</div>
+    <div class="follow">
+      <span>Follow Sanctuary</span>
+      <a class="social" href="https://www.facebook.com/sanctuaryprivatejournal" aria-label="Sanctuary on Facebook">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="11" fill="currentColor"/>
+          <path d="M13.4 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.3-1.4 1.4-1.4h1.5V5.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.6 1.3-3.6 3.7v2H8.1V14h2.4v7z" style="fill: var(--bg)"/>
+        </svg>
+      </a>
+      <a class="social" href="https://www.instagram.com/sanctuaryprivatejournal/" aria-label="Sanctuary on Instagram">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
   </footer>
 </div>
 </body>
