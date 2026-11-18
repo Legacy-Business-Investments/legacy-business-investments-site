@@ -98,3 +98,4 @@ address { font-style: normal; line-height: 1.6; }
 .site-footer { border-top: 1px solid var(--border); padding: 2rem 0 3rem; font-size: .88rem; color: var(--ink-soft); }
 .site-footer .wrap { display: grid; gap: .5rem; }
 .site-footer a { color: var(--ink-soft); }
+.site-footer .follow { margin-top: .25rem; }
